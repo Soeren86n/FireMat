@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { StopTrainingComponent } from './stop-training.component';
+import { TrainingService } from '../training.service';
 
 @Component({
   selector: 'app-current-training',
@@ -12,7 +13,7 @@ export class CurrentTrainingComponent implements OnInit {
   progress = 0;
   timer: any;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private trainingService: TrainingService) {}
 
   ngOnInit() {
     this.startOrResumeTimer();
