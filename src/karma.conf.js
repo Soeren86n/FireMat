@@ -24,6 +24,20 @@ module.exports = function(config) {
       environment: 'dev',
     },
     reporters: ['mocha', 'progress', 'kjhtml'],
+    mochaReporter: {
+      colors: {
+        success: 'green',
+        info: 'bgGreen',
+        warning: 'cyan',
+        error: 'bgRed'
+      },
+      symbols: {
+        success: '+',
+        info: '#',
+        warning: '!',
+        error: 'x'
+      }
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
