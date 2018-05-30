@@ -7,10 +7,12 @@
 
 # dependencies
 /node_modules
+/src/coverage
 
 # IDEs and editors
 /.idea
 .project
+/.vscode
 .classpath
 .c9/
 *.launch
