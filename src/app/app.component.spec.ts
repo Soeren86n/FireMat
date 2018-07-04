@@ -1,16 +1,10 @@
 import { async, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { TestSpecModule } from './module.spec';
-import { AppRoutingModule } from './app-routing.module';
-import { SignupComponent } from './auth/signup/signup.component';
-import { LoginComponent } from './auth/login/login.component';
-import { TrainingComponent } from './training/training.component';
-import { APP_BASE_HREF } from '@angular/common';
+import { RouterTestingModule } from '@angular/router/testing';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { MaterialModule } from './material.module';
 import { HeaderComponent } from './navigation/header/header.component';
-import { NewTrainingComponent } from './training/new-training/new-training.component';
-import { PastTrainingsComponent } from './training/past-trainings/past-trainings.component';
-import { CurrentTrainingComponent } from './training/current-training/current-training.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './auth/auth.service';
 
 describe('AppComponent', () => {
@@ -19,17 +13,11 @@ describe('AppComponent', () => {
       TestBed.configureTestingModule({
         declarations: [
           AppComponent,
-          SignupComponent,
-          LoginComponent,
-          TrainingComponent,
           SidenavListComponent,
           HeaderComponent,
-          NewTrainingComponent,
-          PastTrainingsComponent,
-          CurrentTrainingComponent,
         ],
-        imports: [TestSpecModule, AppRoutingModule],
-        providers: [{ provide: APP_BASE_HREF, useValue: '/' }, AuthService],
+        imports: [RouterTestingModule, MaterialModule, BrowserAnimationsModule],
+        providers: [AuthService],
       }).compileComponents();
     }),
   );

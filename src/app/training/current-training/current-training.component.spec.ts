@@ -1,12 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CurrentTrainingComponent } from './current-training.component';
-import { TestSpecModule } from '../../module.spec';
-import { SignupComponent } from '../../auth/signup/signup.component';
-import { LoginComponent } from '../../auth/login/login.component';
-import { TrainingComponent } from '../training.component';
-import { NewTrainingComponent } from '../new-training/new-training.component';
-import { PastTrainingsComponent } from '../past-trainings/past-trainings.component';
+import { MatDialogModule, MatProgressSpinnerModule } from '@angular/material';
+import { TrainingService } from '../training.service';
 
 describe('CurrentTrainingComponent', () => {
   let component: CurrentTrainingComponent;
@@ -14,15 +10,9 @@ describe('CurrentTrainingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        CurrentTrainingComponent,
-        SignupComponent,
-        LoginComponent,
-        TrainingComponent,
-        NewTrainingComponent,
-        PastTrainingsComponent,
-      ],
-      imports: [TestSpecModule],
+      declarations: [CurrentTrainingComponent],
+      imports: [MatProgressSpinnerModule, MatDialogModule],
+      providers: [TrainingService],
     }).compileComponents();
   }));
 

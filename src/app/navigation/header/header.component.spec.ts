@@ -1,15 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
-import { TestSpecModule } from '../../module.spec';
-import { SignupComponent } from '../../auth/signup/signup.component';
-import { LoginComponent } from '../../auth/login/login.component';
-import { TrainingComponent } from '../../training/training.component';
-import { NewTrainingComponent } from '../../training/new-training/new-training.component';
-import { PastTrainingsComponent } from '../../training/past-trainings/past-trainings.component';
-import { CurrentTrainingComponent } from '../../training/current-training/current-training.component';
 import { AuthService } from '../../auth/auth.service';
 import { By } from '@angular/platform-browser';
+import { MatButtonModule, MatIconModule, MatToolbarModule } from '@angular/material';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -18,16 +13,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        HeaderComponent,
-        SignupComponent,
-        LoginComponent,
-        TrainingComponent,
-        NewTrainingComponent,
-        PastTrainingsComponent,
-        CurrentTrainingComponent,
-      ],
-      imports: [TestSpecModule],
+      declarations: [HeaderComponent],
+      imports: [MatIconModule, MatToolbarModule, MatButtonModule, RouterTestingModule],
       providers: [AuthService],
     }).compileComponents();
   }));
