@@ -1,13 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginComponent } from './login.component';
-import { MatInputModule } from '@angular/material';
-import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '../../../../node_modules/@angular/material';
+import { ReactiveFormsModule } from '../../../../node_modules/@angular/forms';
 import { AuthService } from '../auth.service';
-import { RouterTestingModule } from '@angular/router/testing';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '../../../../node_modules/@angular/router/testing';
+import { BrowserAnimationsModule } from '../../../../node_modules/@angular/platform-browser/animations';
 
-describe('LoginComponent', () => {
+fdescribe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
 
